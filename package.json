@@ -1,0 +1,24 @@
+{
+  "name": "cssfy",
+  "version": "1.0.0",
+  "description": "A tiny utility to convert pojo to css string and inject them to dom if needed.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chasscepts/cssfy.git"
+  },
+  "keywords": [
+    "react",
+    "style",
+    "css"
+  ],
+  "author": "Obetta Francis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chasscepts/cssfy/issues"
+  },
+  "homepage": "https://github.com/chasscepts/cssfy#readme"
+}
