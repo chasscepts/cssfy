@@ -12,20 +12,19 @@ const randomId = () => 0
 const convertToCss = function(pojo){
   if(!pojo) throw new TypeError("Input evaluated to false");
   if(!isPojo(pojo))  throw new TypeError("Input does not have a valid css syntax");
-  return Object.keys(pojo).reduce((css, selector) => {  //iterate over the selectors
+  return Object.keys(pojo).map((selector) => {  //iterate over the selectors
     const stylePojo = pojo[selector];
     //  A valid style syntax must be provided for each selector
     if(!isPojo(stylePojo)) throw new TypeError(`The style provide for selector ${selector} is not valid!`);
-
-    return `${css}${selector}{${
-      Object.keys(stylePojo).reduce((style, attribute) => {
+    return `${selector}{${
+      Object.keys(stylePojo).map(attribute => { //  iterate over attributes
         const value = stylePojo[attribute];
         //  value must either be a string or a number
         if(!isNumberOrString(value)) throw new TypeError(`${value} is not valid for style attribute ${attribute} in selector ${selector}`);
-        return `${style}${attribute}:${value};`;
-      }, '')
-    }} `;
-  }, '');
+        return `${attribute}:${value};`
+      }).join('')
+    }}`
+  }).join(' ');
 }
 
 /**

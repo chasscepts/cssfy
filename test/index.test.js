@@ -33,6 +33,6 @@ test('Null is not a valid style attribute value', () => {
 
 test('Correctly parses a valid pojo style', () => {
   const pojo = {h1:{opacity: 1, height: '1px'}, '.success': {color: 'green' }, '.expand:hover':{width: '100px'}};
-  const expected = "h1{opacity:1;height:1px;} .success{color:green;} .expand:hover{width:100px;} "
+  const expected = "h1{opacity:1;height:1px;} .success{color:green;} .expand:hover{width:100px;}";
   expect(cssfy.tocss(pojo)).toBe(expected);
 });
